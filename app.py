@@ -135,7 +135,7 @@ def get_weather():
 
     # the weather variable MUST be returned otherwise it is only used within the
     # the function and can't be used by the rest of the code!!
-    return render_template('base.html', weather=weather)
+    return render_template('index.html', weather=weather)
 
 
 if __name__ == '__main__':
