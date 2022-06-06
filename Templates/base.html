@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+  </head>
+  <body>
+    <div class="containerX">
+      <div class="weather-side">
+        <div class="weather-gradient"></div>
+        <div class="date-container">
+          <h1 class="date-dayname">{{ weather.weekday}}</h1>
+          <span class="date-day"
+            >{{weather.day}} {{weather.month}}, {{weather.year}}
+          </span>
+          <i class="location-icon" data-feather="map-pin"></i>
+          <span class="location">{{weather.state}}, {{weather.country}}</span>
+        </div>
+        <div class="weather-container">
+          <i class="weather-icon" data-feather="sun"></i>
+          <h1 class="weather-temp">{{weather.temperature}}°F</h1>
+          <h3 class="weather-desc">{{weather.description}}</h3>
+        </div>
+      </div>
+      <div class="info-side">
+        <div class="today-info-container">
+          <div class="today-info">
+            <div class="precipitation">
+              <span class="title">CHANCE OF RAIN</span
+              ><span class="value">[WORK IN PROGRESS..]</span>
+              <div class="clear"></div>
+            </div>
+            <div class="humidity">
+              <span class="title">HUMIDITY</span
+              ><span class="value"> {{weather.humidity}}%</span>
+              <div class="clear"></div>
+            </div>
+            <div class="wind">
+              <span class="title">WIND</span
+              ><span class="value">{{weather.wind_speed}} mph</span>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+        <div class="week-container">
+          <ul class="week-list">
+            <li class="active">
+              <i class="day-icon" data-feather="sun"></i
+              ><span class="day-name">{{weather.tomorrow}}</span
+              ><span class="day-temp">Day: {{weather.tomorrowDayTemp}}°F</span
+              ><span class="night-temp"
+                >Night: {{weather.tomorrowNightTemp}}°F</span
+              >
+            </li>
+            <li>
+              <i class="day-icon" data-feather="cloud"></i
+              ><span class="day-name">{{weather.twodaysFromNow}}</span
+              ><span class="day-temp">Day: {{weather.twodaysDayTemp}}°F</span
+              ><span class="night-temp"
+                >Night: {{weather.twodaysNightTemp}}°F</span
+              >
+            </li>
+            <li>
+              <i class="day-icon" data-feather="cloud-snow"></i
+              ><span class="day-name">{{weather.threedaysFromNow}}</span
+              ><span class="day-temp">Day: {{weather.threedaysDayTemp}}°F</span
+              ><span class="night-temp"
+                >Night: {{weather.threedaysNightTemp}}°F</span
+              >
+            </li>
+            <li>
+              <i class="day-icon" data-feather="cloud-rain"></i
+              ><span class="day-name">{{weather.fourdaysFromNow}}</span
+              ><span class="day-temp">Day: {{weather.fourdaysDayTemp}}°F</span
+              ><span class="night-temp"
+                >Night: {{weather.fourdaysNightTemp}}°F</span
+              >
+            </li>
+            <div class="clear"></div>
+          </ul>
+        </div>
+        <div class="location-container">
+          <button class="location-button">
+            <i data-feather="map-pin"></i><span>Change location</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
