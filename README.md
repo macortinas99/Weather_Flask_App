@@ -5,3 +5,7 @@ Geocoder was added as an improvement, instead of the user having to select the c
 
 # How to run weather app
 Once repository has been cloned, open the app.py file and run the file. It will open a local hosted application using flask on the local host port 3000.
+
+# This widget will show up once the app.py file has been ran
+![image](https://user-images.githubusercontent.com/58274004/172258298-72fb17f9-fccc-4e10-93e3-bcf7d4b6cdab.png)
+
